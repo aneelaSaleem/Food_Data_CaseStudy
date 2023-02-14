@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+sqlalchemy = "*"
+pandas = "*"
+psycopg2-binary = "*"
+types-psycopg2 ="*"
+isort = "*"
+black = "*"
+mypy = "*"
+autopep8 = "*"
+python-dotenv = "*"
+pytest = "*"
+requests-mock = "*"
+tabulate = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+
