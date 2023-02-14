@@ -17,9 +17,9 @@ python-dotenv = "*"
 pytest = "*"
 requests-mock = "*"
 tabulate = "*"
+flake8 = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.10"
-
