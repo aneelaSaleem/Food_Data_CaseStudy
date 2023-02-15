@@ -7,9 +7,9 @@ from sqlalchemy import Engine
 
 
 class AbstractDataSink(metaclass=abc.ABCMeta):
-    name = ""
 
-    def __init__(self, df: pd.DataFrame):
+    def __init__(self, name: str, df: pd.DataFrame):
+        self.name = name
         self.df = df
 
     @abc.abstractmethod
@@ -19,8 +19,7 @@ class AbstractDataSink(metaclass=abc.ABCMeta):
 
 class CSVDataSink(AbstractDataSink):
     def __init__(self, df: pd.DataFrame, write_path: str):
-        super().__init__(df)
-        self.name = "CSV"
+        super().__init__("CSV", df)
         self.write_path = write_path
 
     def save_data(self, ) -> bool:
@@ -36,8 +35,7 @@ class CSVDataSink(AbstractDataSink):
 class DBDataSink(AbstractDataSink):
 
     def __init__(self, df: pd.DataFrame, connection_props: dict):
-        super().__init__(df)
-        self.name = "PostgresDb"
+        super().__init__("PostgresDb", df)
         self.connection_props = connection_props
 
     def __get_db_engine(self) -> Engine:
