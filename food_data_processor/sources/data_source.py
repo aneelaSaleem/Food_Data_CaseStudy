@@ -9,8 +9,8 @@ import requests
 
 
 class AbstractDataSource(metaclass=abc.ABCMeta):
-    def __init__(self, type: str):
-        self.name = type
+    def __init__(self, name: str):
+        self.name = name
 
     @abc.abstractmethod
     def fetch_data(self) -> pd.DataFrame:
