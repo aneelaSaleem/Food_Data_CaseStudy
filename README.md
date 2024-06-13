@@ -28,7 +28,7 @@ You have to follow these steps:
 5. shutdown containers `docker-compose down`
 
 
-#### CICD
+#### CI/CD
 GitHub action file is also written, once we commit and create a PR to main branch, the pipeline will check linting and run all tests. It fails if any test case fails
 
 #### CASE STUDY - Theoretical Questions 
